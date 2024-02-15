@@ -1,0 +1,139 @@
+/* General Body Styling */
+body {
+    background: url('/static/images/background.png') no-repeat left center fixed;
+    background-size: 50%; /* Adjust this value to your preference */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+/* Header Styling */
+header {
+    font-size: 34px;
+    font-weight: bold;
+}
+
+/* Button Container Styling */
+.button-container {
+    margin-top: 2cm;
+}
+
+.navbar-text {
+    color: black;
+    font-size: 18px;
+
+}
+
+/* Add styles for the button container */
+.button-container {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+/* Add styles for the box container */
+.box-container {
+    border: 2px solid greenyellow   ; /* Border color */
+    border-radius: 10px; /* Border radius */
+    margin:0px;
+    padding: 5px; /* Padding inside the box */
+    background-color: rgb(31, 166, 31); /* Background color of the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+/* Add styles for the button box */
+.button-box {
+    display: flex;
+    justify-content: space-around; /* Adjust spacing between buttons */
+}
+
+/* Add styles for the buttons */
+.button-box .btn {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.card-header {
+    background-color:rgb(31, 166, 31); /* Bootstrap primary color */
+    color:black ;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-body {
+    background-color: rgba(211, 211, 211, 0.5);
+    border-radius: 0 0 20px 20px;
+}
+
+/* Button Styling */
+.btn-outline-primary {
+    color: white; /* Bootstrap primary color */
+    border-color:rgb(31, 166, 31); /* Bootstrap primary color */
+}
+
+.btn-outline-primary:hover {
+    background-color: greenyellow; /* Bootstrap primary color */
+    color: greenyellow;
+}
+
+.btn-primary {
+    background-color:rgb(31, 166, 31); /* Bootstrap primary color */
+    border-color: rgb(31, 166, 31)F; /* Bootstrap primary color */
+}
+
+.btn-primary:hover {
+    background-color:black; /* Slightly darker shade for hover effect */
+    border-color: black;
+}
+/* Button Hover Styles */
+#add:hover {
+    background-color: rgb(31, 166, 31); /* Change to your preferred hover color */
+    box-shadow: 0 12px 20px rgb(31, 166, 31) ;
+    transform: translateY(-4px);
+}
+
+
+/* Container Styling */
+.container1 {
+    margin: 0;
+    background-color:rgb(31, 166, 31);
+    padding: 0;
+}
+/* Button Styles with Space */
+.btn {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    margin-right: 10px; /* Adjust the margin as needed for space between buttons */
+}
+
+.btn:hover {
+    background-color: #007bff; /* Change to your preferred hover color */
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    background-color: #0056b3; /* Change to your preferred active color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+}
+
+
+/* Responsive Styling for Small Screens */
+@media (max-width: 576px) {
+    body {
+        background-size: 100%;
+    }
+}
+
+

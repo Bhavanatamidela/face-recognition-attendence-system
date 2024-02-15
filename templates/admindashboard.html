@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <!-- Add your CSS links and styles here -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admindashboard.css') }}">
+    <style>
+        body {
+            margin: 2inch; /* Set margin to 2 inches on all sides */
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff; /* White background */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 13px 13px 20px #1678d9, -13px -13px 20px ;
+            width: calc(100% - 2    in); /* Adjusted width */
+            max-width: 1400px; /* Set a maximum width for better readability */
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .graph-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Allow the graphs to wrap to the next line on smaller screens */
+            margin-top: 20px; /* Add margin between charts and content */
+        }
+
+        .graph-container img {
+            width: 45%; /* Adjusted width for larger graphs */
+            max-width: 600px; /* Set a maximum width for each graph */
+            height: auto;
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-top: 20px; /* Add margin between header and charts */
+        }
+
+        button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff; /* Set your button color */
+            color: #fff; /* Set text color */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, Admin!</h1>
+        <!-- Display the Charts -->
+        <h2>Attendance Charts</h2>
+        <div class="graph-container">
+            <!-- Display the chart images side by side -->
+            <img src="{{ chart_path }}" alt="Attendance Chart">
+            <img src="{{ url_for('static', filename='attendance_percentage_chart.png') }}" alt="Attendance Percentage Chart">
+        </div>
+
+        <!-- Logout link -->
+        <button onclick="location.href='/logout'">Logout</button>
+    </div>
+</body>
+</html>

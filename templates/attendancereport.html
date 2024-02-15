@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Report</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Material Icons CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="../static/images/attendancereport.css">
+
+    <!-- Your custom styles go here -->
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <div class="col">
+        <h2>Attendance Report</h2>
+        
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">S No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if l %}
+                        {% for i in range(l) %}
+                            <tr>
+                                <td>{{ i + 1 }}</td>
+                                <td>{{ names[i] }}</td>
+                                <td>{{ rolls[i] }}</td>
+                                <td>{{ times[i].strftime("%d-%B-%Y") }}</td>
+                                <td>{{ times[i].strftime("%H:%M:%S") }}</td>
+                                <td>
+                                    <form action="{{ url_for('delete_attendance') }}" method="post">
+                                        <input type="hidden" name="index" value="{{ i }}">
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+            
+            <form action="{{ url_for('export_attendance', format='csv') }}" method="get">
+                <button type="submit" class="btn btn-success">Download CSV</button>
+                <a href="{{ url_for('home') }}" class="btn btn-primary">Back</a>
+            </form>
+           
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (popper.js and bootstrap.js) -->
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha384-e3ggMyUKLWYVrN1pMbTbBfTEdQu0L8t2Vb0WxJs/8FMfQb75vZP7TIvwEANE35xh" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-GLhlTQ8i8iJbcLqD3E3J4RlYg5lZG2j4ACQq4MoMG8+PDa9a5EG6KJhR6RE1O8eA" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVXpFg8xyPibxuq9" crossorigin="anonymous"></script>
+</body>
+</html>
